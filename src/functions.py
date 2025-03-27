@@ -5,11 +5,22 @@ import json
 from urllib.request import urlopen, Request
 from urllib.parse import urlencode
 from ulauncher.api.client.Extension import Extension
+from ulauncher.api.client.EventListener import EventListener
+from ulauncher.api.shared.event import KeywordQueryEvent
+from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 
 
-SEARCH_URL = Extension.preferences["sxinstance"]
-SUGGESTION_URL = Extension.preferences["suggestion_url"]
-API_URL = Extension.preferences["api_url"]
+
+SEARCH_URL = ""
+SUGGESTION_URL = ""
+API_URL = ""
+
+def init_settings(extension_preferences):
+    """Initialize global settings from extension preferences"""
+    global SEARCH_URL, SUGGESTION_URL, API_URL
+    SEARCH_URL = extension_preferences.get("sxinstance", "")
+    SUGGESTION_URL = extension_preferences.get("suggestion_url", "")
+    API_URL = extension_preferences.get("api_url", "")
 
 url = "https://docs.python.org/3.4/howto/urllib2.html"
 

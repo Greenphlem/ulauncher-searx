@@ -3,7 +3,7 @@ gi.require_version('Gdk', '3.0')
 
 import json
 from urllib.request import urlopen, Request
-from urllib.parse import urlencode
+from urllib.parse import urlencode, quote
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
 from ulauncher.api.shared.event import KeywordQueryEvent
@@ -18,9 +18,9 @@ API_URL = ""
 def init_settings(extension_preferences):
     """Initialize global settings from extension preferences"""
     global SEARCH_URL, SUGGESTION_URL, API_URL
-    SEARCH_URL = extension_preferences.get("sxinstance", "")
-    SUGGESTION_URL = extension_preferences.get("suggestion_url", "")
-    API_URL = extension_preferences.get("api_url", "")
+    SEARCH_URL = extension_preferences["sxinstance"]
+    SUGGESTION_URL = extension_preferences["suggestion_url"]
+    API_URL = extension_preferences["api_url"]
 
 url = "https://docs.python.org/3.4/howto/urllib2.html"
 
@@ -30,7 +30,8 @@ def generate_url(search):
     >>> generate_url("hallo")
     'https://search.searx.com/search?q=hallo'
     """
-    return SEARCH_URL + urlencode({"/search?q=": search})
+    base_url = SEARCH_URL.rstrip('/')
+    return f"{base_url}/search?q={quote(search)}"
 
 
 def generate_suggestions(search, lang="en-US"):

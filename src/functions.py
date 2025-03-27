@@ -1,3 +1,6 @@
+import gi
+gi.require_version('Gdk', '3.0')
+
 import json
 from urllib.request import urlopen, Request
 from urllib.parse import urlencode

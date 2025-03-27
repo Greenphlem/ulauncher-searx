@@ -30,7 +30,7 @@ def generate_url(search):
     >>> generate_url("hallo")
     'https://search.searx.com/search?q=hallo'
     """
-    return SEARCH_URL + urlencode({"/?q": search})
+    return SEARCH_URL + urlencode({"/search?q=": search})
 
 
 def generate_suggestions(search, lang="en-US"):

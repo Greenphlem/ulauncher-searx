@@ -2,7 +2,7 @@
   "required_api_version": "^2.0.0",
   "name": "searx extension",
   "description": "To use searx search engine",
-  "developer_name": "Pegoku",
+  "developer_name": "Pegoku, Greenphlem",
   "icon": "images/icon.png",
   "options": {
     "query_debounce": 0.1
@@ -10,7 +10,7 @@
   "preferences": [
     {
       "id": "sxinstance",
-      "type": "keyword",
+      "type": "input",
       "name": "Instance",
       "description": "Searxng Instance, see https://searx.space/ for examples",
       "default_value": "https://paulgo.io/"

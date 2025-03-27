@@ -4,12 +4,12 @@ gi.require_version('Gdk', '3.0')
 import json
 from urllib.request import urlopen, Request
 from urllib.parse import urlencode
-from ulauncher.api.client.Extension import extension
+from ulauncher.api.client.Extension import Extension
 
 
-SEARCH_URL = extension.preferences["sxinstance"]
-SUGGESTION_URL = extension.preferences["suggestion_url"]
-API_URL = extension.preferences["api_url"]
+SEARCH_URL = Extension.preferences["sxinstance"]
+SUGGESTION_URL = Extension.preferences["suggestion_url"]
+API_URL = Extension.preferences["api_url"]
 
 url = "https://docs.python.org/3.4/howto/urllib2.html"
 

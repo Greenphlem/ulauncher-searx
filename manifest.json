@@ -9,6 +9,13 @@
   },
   "preferences": [
     {
+      "id": "sxinstance",
+      "type": "keyword",
+      "name": "Instance",
+      "description": "Searxng Instance, see https://searx.space/ for examples",
+      "default_value": "https://paulgo.io/"
+    },
+    {
       "id": "keyword",
       "type": "keyword",
       "name": "Searx",
@@ -32,6 +39,20 @@
         {"value": true, "text": "yes"},
         {"value": false, "text": "no"}
       ]
+    },
+    {
+      "id": "suggestion_url",
+      "type": "keyword",
+      "name": "Suggestion URL",
+      "description": "Where the extension should get search suggestions",
+      "default_value": "https://duckduckgo.com/ac/?"
+    },
+    {
+      "id": "api_url",
+      "type": "keyword",
+      "name": "API URL",
+      "description": "The API for the suggestion URL",
+      "default_value": "https://api.duckduckgo.com/?"
     }
   ]
 }

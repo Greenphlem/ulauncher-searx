@@ -6,7 +6,7 @@ from ulauncher.api.client.EventListener import EventListener
 from ulauncher.api.shared.event import KeywordQueryEvent
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 
-from src.functions import generate_suggestions, generate_instant_answer
+from src.functions import generate_suggestions, generate_instant_answer, init_settings
 from src.items import no_input_item, show_suggestion_items, show_instant_answer
 
 
@@ -19,6 +19,7 @@ class searxExtension(Extension):
 
 class KeywordQueryEventListener(EventListener):
     def on_event(self, event, extension):
+        init_settings(extension.preferences)
         query = event.get_argument() or str()
         lang = extension.preferences["searx_search_language"]
         include_instant_answer = extension.preferences["searx_include_instant_answer"] == "true"

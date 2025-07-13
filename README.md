@@ -2,7 +2,7 @@
 
 ![Screenshot](screenshot.png)
 
-This Ulauncher extension enables you to use the Searx engine.
+This Ulauncher extension enables you to use the Searx engine. Modified to allow adding custom instances as well as a few other configurable options
 
 ## Install
 

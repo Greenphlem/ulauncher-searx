@@ -1,11 +1,12 @@
 import json
 from urllib.request import urlopen, Request
 from urllib.parse import urlencode
+from ulauncher.api.client.Extension import extension
 
 
-SEARCH_URL = "https://search.galios.io/search?"
-SUGGESTION_URL = "https://duckduckgo.com/ac/?"    
-API_URL = "https://api.duckduckgo.com/?"
+SEARCH_URL = extension.preferences["sxinstance"]
+SUGGESTION_URL = extension.preferences["suggestion_url"]
+API_URL = extension.preferences["api_url"]
 
 url = "https://docs.python.org/3.4/howto/urllib2.html"
 

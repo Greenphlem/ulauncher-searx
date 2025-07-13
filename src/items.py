@@ -39,8 +39,13 @@ def show_instant_answer(instant_item, instant_answer, instant_url):
     while anchor <= len(words):
         partial = " ".join(words[anchor : anchor + index])
         if len(partial) > max_chars:
-            answer_chunk.append(" ".join(words[anchor : anchor + index - 1]))
-            anchor += index - 1
+            # Handle case where a single word exceeds max_chars
+            if index == 1:
+                answer_chunk.append(partial)
+                anchor += 1
+            else:
+                answer_chunk.append(" ".join(words[anchor : anchor + index - 1]))
+                anchor += index - 1
             index = 1
             continue
         if anchor + index == len(words):

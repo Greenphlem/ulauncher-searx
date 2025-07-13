@@ -3,7 +3,7 @@ from urllib.request import urlopen, Request
 from urllib.parse import urlencode
 
 
-SEARCH_URL = "https://searx.work/search?"
+SEARCH_URL = "https://search.galios.io/search?"
 SUGGESTION_URL = "https://duckduckgo.com/ac/?"    
 API_URL = "https://api.duckduckgo.com/?"
 
@@ -13,7 +13,7 @@ url = "https://docs.python.org/3.4/howto/urllib2.html"
 def generate_url(search):
     """
     >>> generate_url("hallo")
-    'https://search.searx.com/search?q=hallo'
+    'https://search.galios.io/search?q=hallo'
     """
     return SEARCH_URL + urlencode({"q": search})
 

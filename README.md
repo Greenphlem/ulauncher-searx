@@ -9,7 +9,7 @@ This Ulauncher extension enables you to use the Searx engine.
 Then open Ulauncher preferences window > extensions > add extension and paste the following url:
 
 ```
-https://github.com/Pegoku/ulauncher-searx
+https://github.com/Greenphlem/ulauncher-searx
 ```
 
 ## Credits
